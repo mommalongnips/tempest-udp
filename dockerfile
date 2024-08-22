@@ -10,14 +10,11 @@ COPY . .
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 50222 available to the world outside this container
-EXPOSE 50222
-
 # Define environment variable
 ENV INFLUXDB_URL=""
 ENV INFLUXDB_TOKEN=""
-ENV INFLUXDB_ORG=""
-ENV INFLUXDB_BUCKET=""
+ENV INFLUXDB_ORG="home"
+ENV INFLUXDB_BUCKET="tempest"
 
 # Run app.py when the container launches
-CMD ["python", "./app.py"]
+CMD ["python", "./main.py"]
